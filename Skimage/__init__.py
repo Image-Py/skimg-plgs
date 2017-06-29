@@ -1,0 +1,1 @@
+catlog = ['Data', '-', 'Filters', 'Morphology', 'Segmentation', '-', 'Demo']

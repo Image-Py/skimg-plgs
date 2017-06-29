@@ -1,0 +1,1 @@
+catlog = ['edge_plgs', '-', 'canny']
