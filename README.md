@@ -121,8 +121,8 @@ class Plugin(Filter):
     note = ['all', 'auto_msk', 'auto_snap', 'preview']
     para = {'sigma':1.0, 'low_threshold':10, 'high_threshold':20}
     view = [(float, (0,10), 1,  'sigma', 'sigma', 'pix'),
-            ('slide',(0,30), 'low_threshold', 'low_threshold',''),
-            ('slide',(0,30), 'high_threshold', 'high_threshold','')]
+            ('slide',(0,30), 4, 'low_threshold', 'low_threshold'),
+            ('slide',(0,30), 4, 'high_threshold', 'high_threshold')]
 
     def run(self, ips, snap, img, para = None):
         return feature.canny(snap, sigma=para['sigma'], low_threshold=para[
@@ -148,8 +148,8 @@ class Plugin(Filter):
     note = ['8-bit', 'auto_msk', 'auto_snap', 'preview']
     
     para = {'thr1':0, 'thr2':255}
-    view = [('slide', (0,255), 'Low', 'thr1', ''),
-                ('slide', (0,255), 'High', 'thr2', '')]
+    view = [('slide', (0,255), 0, 'Low', 'thr1'),
+                ('slide', (0,255), 0, 'High', 'thr2')]
 
     def load(self, ips):
         self.buflut = ips.lut
