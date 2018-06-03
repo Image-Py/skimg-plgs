@@ -12,8 +12,8 @@ class Plugin(Filter):
 	note = ['8-bit', 'not_slice', 'auto_snap', 'not_channel']
 	
 	para = {'sigma':2, 'gdt':2}
-	view = [(int, (0,10), 0,  'sigma', 'sigma', 'pix'),
-			(int, (0, 10), 0,  'gradient', 'gdt', '')]
+	view = [(int,'sigma',  (0,10), 0,  'sigma', 'pix'),
+			(int,  'gdt',(0, 10), 0,  'gradient', '')]
 	
 	def run(self, ips, snap, img, para = None):
 		denoised = rank.median(img, disk(para['sigma']))

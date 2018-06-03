@@ -7,8 +7,8 @@ class Plugin(Filter):
     note = ['8-bit', 'auto_msk', 'auto_snap', 'preview']
     
     para = {'thr1':0, 'thr2':255}
-    view = [('slide', (0,255), 0, 'Low', 'thr1'),
-            ('slide', (0,255), 0, 'High', 'thr2')]
+    view = [('slide','Low',  (0,255), 0, 'thr1'),
+            ('slide', 'High',(0,255), 0,  'thr2')]
 
     def load(self, ips):
         self.buflut = ips.lut

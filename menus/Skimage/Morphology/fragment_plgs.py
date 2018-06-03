@@ -7,8 +7,8 @@ class RemoveObjects(Filter):
     note = ['8-bit', 'auto_msk', 'auto_snap', 'preview']
     
     para = {'size': 64, 'con':2}
-    view = [(int, (0,1e8), 0, 'size', 'size', 'pix'),
-            (int, (1,3), 0, 'connect', 'con', '')]
+    view = [(int, 'size', (0,1e8), 0, 'size', 'pix'),
+            (int,'con', (1,3), 0, 'connect',  '')]
 
     #process
     def run(self, ips, snap, img, para = None):
@@ -20,8 +20,8 @@ class RemoveHoles(Filter):
     note = ['8-bit', 'auto_msk', 'auto_snap', 'preview']
     
     para = {'size': 64, 'con':2}
-    view = [(int, (0,1e8), 0, 'size', 'size', 'pix'),
-            (int, (1,3), 0, 'connect', 'con', '')]
+    view = [(int, 'size', (0,1e8), 0, 'size', 'pix'),
+            (int,  'con',(1,3), 0, 'connect', '')]
 
     #process
     def run(self, ips, snap, img, para = None):

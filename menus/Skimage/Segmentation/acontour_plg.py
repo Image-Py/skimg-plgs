@@ -11,10 +11,10 @@ class Plugin(Simple):
 	note = ['all', 'req_roi']
 	
 	para = {'sigma':3.0, 'alpha':0.015, 'beta':10, 'gamma':0.001}
-	view = [(float, (0,10), 1,  'sigma', 'sigma', 'pix'),
-		(float, (0.001, 0.01), 3,  'alpha', 'alpha', ''),
-		(float, (0,30), 0,  'beta', 'beta', ''),
-		(float, (0.001, 0.01), 3,  'gamma', 'gamma', '')]
+	view = [(float, 'sigma',(0,10), 1,  'sigma',  'pix'),
+		(float, 'alpha',(0.001, 0.01), 3,  'alpha',  ''),
+		(float,  'beta',(0,30), 0,  'beta', ''),
+		(float,  'gamma',(0.001, 0.01), 3,  'gamma', '')]
 
 	def load(self, ips):
 		if not isinstance(ips.roi, PolygonRoi) or len(ips.roi.body)!=1:
